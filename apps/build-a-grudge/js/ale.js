@@ -1,4 +1,5 @@
-const AGENT = "https://grok-builder-agent.grudge.workers.dev";
+const AGENT = "https://build-agent.grudge-studio.com";
+const AGENT_FALLBACK = "https://grok-builder-agent.grudge.workers.dev";
 
 const VOICE = `You are ALE, the builder for Build a Grudge.
 Talk in short everyday English. Two to four sentences.
@@ -7,12 +8,13 @@ If they describe a game, say which game they can play now: Ember Run, Grudge Are
 The 3D world, deploy, and publish live at https://builder.grudge-studio.com after they sign in with Grudge ID.
 You are the admin of this app. The crew (planner, builder, fixer) works behind you. The person only hears you.`;
 
-export async function askAle(text) {
-  const res = await fetch(AGENT + "/chat", {
+async function postChat(base, text) {
+  const res = await fetch(base + "/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "auto",
+      product: "build-a-grudge",
       tool_choice: "none",
       messages: [
         { role: "system", content: VOICE },
@@ -22,10 +24,20 @@ export async function askAle(text) {
   });
   const data = await res.json().catch(() => ({}));
   const reply = data.choices?.[0]?.message?.content || data.response || data.text || "";
-  if (!res.ok || !reply) {
-    return "I heard you. I could not finish a longer answer, so I started the closest game. Tell me what to change.";
-  }
+  if (!res.ok || !reply) throw new Error("empty");
   return String(reply).replace(/```[\s\S]*?```/g, "").trim();
+}
+
+export async function askAle(text) {
+  try {
+    return await postChat(AGENT, text);
+  } catch {
+    try {
+      return await postChat(AGENT_FALLBACK, text);
+    } catch {
+      return "I heard you. I could not finish a longer answer, so I started the closest game. Tell me what to change.";
+    }
+  }
 }
 
 export function pickGame(text) {
@@ -40,6 +52,7 @@ export function pickGame(text) {
 export async function systemEye() {
   const rows = [
     ["ALE's builder", AGENT + "/health"],
+    ["ALE direct", AGENT_FALLBACK + "/health"],
     ["Free model hands", "https://forge.grudge-studio.com/api/free-ai/status"],
     ["Legion", "https://ai.grudge-studio.com/health"],
     ["Game library", AGENT + "/library/studio"],

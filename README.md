@@ -36,7 +36,7 @@ instead of across five different apps.
 ## Grudge Studio
 
 This fork is the Grudge Studio client source. The client app is
-[Build a Grudge](https://build-a-grudge.vercel.app) (`apps/build-a-grudge`).
+[Build a Grudge](https://build.grudge-studio.com) (`apps/build-a-grudge`).
 Sign in is Grudge ID. ALE answers in everyday English. The five playable
 games are authored and run in a sandboxed frame. Keys stay on the existing
 Cloudflare agent. The 3D canvas stays
