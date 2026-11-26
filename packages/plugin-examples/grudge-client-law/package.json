@@ -1,0 +1,24 @@
+{
+  "name": "@grudge/client-law",
+  "version": "0.1.0",
+  "description": "Grudge Studio client law for free asset libraries, model routing, grudge-pipeline drafts, public GitHub, and Puter 3D Studio.",
+  "keywords": [
+    "ohmygame-plugin"
+  ],
+  "files": [
+    ".ohmygame-plugin",
+    "assets",
+    "locales",
+    "skills"
+  ],
+  "scripts": {
+    "check": "ohmygame-plugin check",
+    "pack": "ohmygame-plugin pack"
+  },
+  "devDependencies": {
+    "@ohmygame/plugin-cli": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -8,6 +8,7 @@ template as `npm create ohmygame-plugin`. Add one to OhMyGame from its folder
 | Folder | Adds |
 | --- | --- |
 | [`level-ideas`](level-ideas) | A Skill |
+| [`grudge-client-law`](grudge-client-law) | A Skill: Grudge client law for libraries, models, pipeline, GitHub, and Puter 3D |
 | [`project-panel`](project-panel) | A panel and a command that opens it |
 | [`hello-tools`](hello-tools) | Native code: a tool for the agent and a command |
 | [`echo-server`](echo-server) | A local MCP server |

@@ -30,6 +30,24 @@
 > [!NOTE]
 > OhMyGame 目前处于 Beta 阶段，难免有粗糙的地方。遇到问题欢迎告诉我们。
 
+## Grudge Studio
+
+本分叉是 Grudge Studio 的客户端源。在线画布是
+[builder.grudge-studio.com](https://builder.grudge-studio.com)。
+Agent 加载
+[`grudge/client-law`](packages/plugin-examples/grudge-client-law/skills/grudge-client-law/SKILL.md)
+（规范正文为英文）。
+
+| 实践 | 规则 |
+| --- | --- |
+| 免费素材库 | 二进制在 `assets.grudge-studio.com`。Kenney、CraftPix、Duelyst。只发经过检查的单个 GLB。CC-BY 需署名。缺口填充只进目录，不进玩法身体。 |
+| API 模型 | 先 Legion（`ai.grudge-studio.com`），再 Puter 用户付费，最后免费档。密钥不进客户端。 |
+| [grudge-pipeline](https://github.com/MolochDaGod/grudge-pipeline) | 草稿工作室 `grudge-pipeline.vercel.app`。Meshy 输出、Mixamo 骨骼、缩放 `0.01` 和它自己的角色表都不是玩法路径。 |
+| GitHub | 只读公开仓库并钉住提交。应用里不放令牌。企业仓库保持私有。 |
+| [HeyPuter/everything](https://github.com/HeyPuter/everything) | 在 [3d.puter.com](https://3d.puter.com) 建模。照片、矢量、音频、音乐、视频应用只做草稿。`src/3d` 是 AGPL-3.0-only：链接，不复制。GLB 导出到 CDN。 |
+
+玩法英雄仍是 `Bip001` 上的 Toon RTS 套件，1 单位 = 1 米，一个动画混合器。玩家存档在 Railway。
+
 ## 下载
 
 | 平台                  | 下载                                                    |

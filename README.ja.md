@@ -30,6 +30,24 @@
 > [!NOTE]
 > OhMyGame は現在ベータ版です。粗い部分もあるので、不具合を見つけたらぜひ教えてください。
 
+## Grudge Studio
+
+このフォークは Grudge Studio のクライアントソースです。公開中のキャンバスは
+[builder.grudge-studio.com](https://builder.grudge-studio.com)
+です。エージェントは
+[`grudge/client-law`](packages/plugin-examples/grudge-client-law/skills/grudge-client-law/SKILL.md)
+を読みます（本文は英語）。
+
+| 実践 | ルール |
+| --- | --- |
+| 無料アセット | バイナリは `assets.grudge-studio.com`。Kenney、CraftPix、Duelyst。検査済みの単一 GLB。CC-BY はクレジット。ギャップ埋めはカタログのみ。 |
+| API モデル | Legion（`ai.grudge-studio.com`）が先、Puter のユーザー負担が次、無料枠は最後。鍵はクライアントに置かない。 |
+| [grudge-pipeline](https://github.com/MolochDaGod/grudge-pipeline) | 下書きスタジオ `grudge-pipeline.vercel.app`。Meshy 出力、Mixamo リグ、スケール `0.01`、独自のキャラ表はプレイ経路ではない。 |
+| GitHub | 公開リポジトリをコミット固定で読む。アプリにトークンを置かない。Enterprise リポジトリは非公開のまま。 |
+| [HeyPuter/everything](https://github.com/HeyPuter/everything) | モデリングは [3d.puter.com](https://3d.puter.com)。写真、ベクター、音声、音楽、動画は下書き。`src/3d` は AGPL-3.0-only。リンクし、コピーしない。GLB は CDN へ。 |
+
+プレイ用ヒーローは `Bip001` の Toon RTS キット、1 単位 = 1 m、ミキサーは一つ。プレイヤー保存は Railway。
+
 ## ダウンロード
 
 | プラットフォーム        | ダウンロード                                                 |

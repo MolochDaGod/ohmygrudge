@@ -33,6 +33,23 @@ instead of across five different apps.
 > [!NOTE]
 > OhMyGame is in beta. Expect rough edges, and tell us what breaks.
 
+## Grudge Studio
+
+This fork is the Grudge Studio client source. The live canvas is
+[builder.grudge-studio.com](https://builder.grudge-studio.com).
+Agents load
+[`grudge/client-law`](packages/plugin-examples/grudge-client-law/skills/grudge-client-law/SKILL.md).
+
+| Practice | Rule |
+| --- | --- |
+| Free libraries | Binaries on `assets.grudge-studio.com`. Kenney, CraftPix, and Duelyst. One checked GLB. Credit CC-BY. Gap-fill stays catalog-only. |
+| API models | Legion (`ai.grudge-studio.com`) first, Puter user-pays second, free tiers last. No keys in the client. |
+| [grudge-pipeline](https://github.com/MolochDaGod/grudge-pipeline) | Draft studio at `grudge-pipeline.vercel.app`. Meshy output, Mixamo rigs, scale `0.01`, and its character table are not the play path. |
+| GitHub | Public read, pin a commit. No tokens in the app. Enterprise repos stay private. |
+| [HeyPuter/everything](https://github.com/HeyPuter/everything) | Model at [3d.puter.com](https://3d.puter.com). Photo, vector, audio, music, and video apps for drafts. `src/3d` is AGPL-3.0-only: link it, do not copy it. Export GLB onto the CDN. |
+
+Play heroes stay the Toon RTS kits on `Bip001`, at 1 unit = 1 m, with one animation mixer. Player saves stay on Railway.
+
 ## Download
 
 | Platform              | Download                                                   |
