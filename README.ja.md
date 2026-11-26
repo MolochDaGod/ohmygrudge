@@ -32,7 +32,9 @@
 
 ## Grudge Studio
 
-このフォークは Grudge Studio のクライアントソースです。公開中のキャンバスは
+このフォークは Grudge Studio のクライアントソースです。クライアントアプリは
+[Build a Grudge](https://build-a-grudge.vercel.app)（`apps/build-a-grudge`）です。
+ログインは Grudge ID だけです。ALE は日常の英語で答えます。遊べる五つのゲームは書き下ろしで、サンドボックスのフレームで動きます。鍵は既存の Cloudflare agent に置いたままです。3D キャンバスは
 [builder.grudge-studio.com](https://builder.grudge-studio.com)
 です。エージェントは
 [`grudge/client-law`](packages/plugin-examples/grudge-client-law/skills/grudge-client-law/SKILL.md)

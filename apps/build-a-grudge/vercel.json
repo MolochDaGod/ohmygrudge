@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "cleanUrls": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://grok-builder-agent.grudge.workers.dev https://forge.grudge-studio.com https://ai.grudge-studio.com; frame-src 'self' about:; object-src 'none'; base-uri 'self'; form-action 'self' https://id.grudge-studio.com" }
+      ]
+    }
+  ]
+}

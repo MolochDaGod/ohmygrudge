@@ -32,7 +32,9 @@
 
 ## Grudge Studio
 
-本分叉是 Grudge Studio 的客户端源。在线画布是
+本分叉是 Grudge Studio 的客户端源。客户应用是
+[Build a Grudge](https://build-a-grudge.vercel.app)（`apps/build-a-grudge`）。
+登录只用 Grudge ID。ALE 用日常英语回答。五个可玩游戏是写好的，跑在沙箱框架里。密钥留在现有的 Cloudflare agent 上。三维画布仍是
 [builder.grudge-studio.com](https://builder.grudge-studio.com)。
 Agent 加载
 [`grudge/client-law`](packages/plugin-examples/grudge-client-law/skills/grudge-client-law/SKILL.md)
