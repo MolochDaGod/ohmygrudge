@@ -9,7 +9,7 @@
         { "key": "Referrer-Policy", "value": "no-referrer" },
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://build-agent.grudge-studio.com https://grok-builder-agent.grudge.workers.dev https://forge.grudge-studio.com https://ai.grudge-studio.com; frame-src 'self' about:; object-src 'none'; base-uri 'self'; form-action 'self' https://id.grudge-studio.com" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://build-agent.grudge-studio.com https://grok-builder-agent.grudge.workers.dev https://forge.grudge-studio.com https://ai.grudge-studio.com; frame-src 'self' about:; object-src 'none'; base-uri 'self'; form-action 'self' https://id.grudge-studio.com" }
       ]
     }
   ]

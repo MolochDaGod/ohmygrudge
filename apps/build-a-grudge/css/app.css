@@ -1,41 +1,146 @@
 :root {
-  --ink: #100e0c;
-  --panel: #1b1714;
-  --line: #2e2723;
-  --ember: #ff6a1f;
-  --mute: #a39890;
-  --text: #f4efe9;
+  --gold: #f6c945;
+  --void: #070604;
+  --paper: #f4efe6;
+  --mute: #b7aa9a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; background: var(--ink); color: var(--text); font: 16px/1.45 system-ui, "Segoe UI", sans-serif; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background:
+    radial-gradient(920px 540px at 78% 12%, rgba(246, 201, 69, 0.14), transparent 58%),
+    radial-gradient(720px 520px at -10% 110%, rgba(92, 28, 8, 0.55), transparent 56%),
+    var(--void);
+  color: var(--paper);
+  font-family: "Literata", "Palatino Linotype", Palatino, serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; color: inherit; }
-.app { min-height: 100%; display: grid; grid-template-rows: auto 1fr; }
-header { display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
-header strong { letter-spacing: -0.03em; }
-header nav { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
-header a, header button { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
-header a[aria-current="page"], .primary { background: var(--ember); color: #1a0c04; border-color: transparent; font-weight: 700; }
-main { padding: 28px 20px 64px; max-width: 980px; margin: 0 auto; width: 100%; }
-h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.04em; margin: 0 0 12px; }
-.lede { color: var(--mute); max-width: 40rem; }
-.row { display: flex; gap: 8px; margin-top: 18px; }
-input[type="text"], textarea { flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
-textarea { width: 100%; min-height: 88px; resize: vertical; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin-top: 28px; }
-.card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-.card small { color: var(--ember); }
-.card p, .speech, li { color: var(--mute); }
-.speech { background: var(--panel); border-left: 3px solid var(--ember); padding: 12px 14px; border-radius: 0 12px 12px 0; }
-.stage { position: relative; height: min(70vh, 520px); background: #000; border-radius: 16px; overflow: hidden; }
-.checks { display: grid; gap: 8px; margin-top: 16px; }
-.check { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; }
-.ok { color: #8dca8a; }
-.bad { color: #e07a6a; }
-details { margin-top: 18px; color: var(--mute); }
-@media (max-width: 640px) {
-  header { align-items: flex-start; flex-direction: column; }
-  header nav { margin-left: 0; }
-  .row { flex-direction: column; }
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.room { min-height: 100vh; display: flex; flex-direction: column; }
+body.playing { overflow: hidden; }
+body.playing .room { height: 100vh; }
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  padding: 22px 7vw 0;
+}
+.mark {
+  font-family: "Fraunces", "Palatino Linotype", serif;
+  font-weight: 680;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+nav { display: flex; gap: 22px; margin-left: auto; flex-wrap: wrap; align-items: baseline; }
+nav a, nav button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--mute);
+  cursor: pointer;
+}
+nav a[aria-current="page"], nav a:hover, nav button:hover { color: var(--gold); }
+main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.hero { padding: 9vh 7vw 8vh; max-width: 46rem; }
+.kicker {
+  margin: 0;
+  color: var(--gold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0.35em 0 0.45em;
+  max-width: 8.2ch;
+  font-family: "Fraunces", "Palatino Linotype", serif;
+  font-weight: 560;
+  font-size: clamp(3.4rem, 8vw, 6.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+form.ask {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-top: 1.6rem;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.28);
+}
+input, textarea {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 14px 0;
+  outline: none;
+}
+input { font-family: "Fraunces", serif; font-size: 1.45rem; }
+textarea { min-height: 7rem; resize: vertical; font-size: 1.2rem; }
+form.ask button, .go {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--gold);
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0.75em;
+  margin: 1.4rem 0 0;
+  color: var(--mute);
+  font-size: 0.95rem;
+}
+.rail a:hover { color: var(--paper); }
+.quiet { color: var(--mute); max-width: 34rem; }
+.speech { font-style: italic; max-width: 38rem; }
+.stage { position: relative; flex: 1; min-height: 0; background: #000; }
+.player-frame { position: absolute; }
+.player-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #000;
+}
+.stage :focus { outline: none; }
+.dock {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+  padding: 14px 7vw 18px;
+  color: var(--mute);
+}
+.dock strong {
+  color: var(--paper);
+  font-family: "Fraunces", serif;
+  font-weight: 560;
+  margin-right: 0.6em;
+}
+.dock .leave { color: var(--gold); margin-right: 0.8em; }
+.walk { color: var(--gold); white-space: nowrap; }
+@media (max-width: 720px) {
+  header { flex-direction: column; align-items: flex-start; gap: 14px; }
+  nav { margin-left: 0; }
+  h1 { font-size: clamp(2.8rem, 14vw, 4rem); }
+  form.ask { flex-direction: column; align-items: stretch; gap: 0; }
+  form.ask button { align-self: flex-start; padding: 8px 0 12px; }
+  .dock { flex-direction: column; }
 }
